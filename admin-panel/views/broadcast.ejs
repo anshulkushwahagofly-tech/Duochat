@@ -1,0 +1,9 @@
+<h1>Broadcast Announcement</h1>
+<% if (typeof sent !== 'undefined' && sent) { %>
+  <p style="color: var(--success)">✅ Broadcast queued: "<%= message %>"</p>
+<% } %>
+<form method="POST" action="/broadcast">
+  <textarea name="message" rows="4" placeholder="Write an announcement to send to all DuoChat users…" required></textarea>
+  <br /><br />
+  <button class="btn success" type="submit">Send Broadcast</button>
+</form>

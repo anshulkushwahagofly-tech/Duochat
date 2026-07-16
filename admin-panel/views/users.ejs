@@ -1,0 +1,35 @@
+<h1>Users</h1>
+<div class="search-box">
+  <form method="GET" action="/users">
+    <input type="text" name="q" placeholder="Search by name or phone…" value="<%= q %>" />
+  </form>
+</div>
+<table>
+  <thead><tr><th>Name</th><th>Phone</th><th>Username</th><th>Status</th><th>Last Seen</th><th>Actions</th></tr></thead>
+  <tbody>
+    <% users.forEach(u => { %>
+      <tr>
+        <td><%= u.name || '—' %></td>
+        <td><%= u.phoneNumber %></td>
+        <td><%= u.username || '—' %></td>
+        <td>
+          <% if (u.isBanned) { %><span class="badge banned">Banned</span>
+          <% } else if (u.isOnline) { %><span class="badge online">Online</span>
+          <% } else { %><span class="badge offline">Offline</span><% } %>
+        </td>
+        <td><%= u.lastSeen ? new Date(u.lastSeen).toLocaleString() : '—' %></td>
+        <td>
+          <% if (u.isBanned) { %>
+            <form method="POST" action="/users/<%= u._id %>/unban" style="display:inline">
+              <button class="btn success" type="submit">Unban</button>
+            </form>
+          <% } else { %>
+            <form method="POST" action="/users/<%= u._id %>/ban" style="display:inline">
+              <button class="btn danger" type="submit">Ban</button>
+            </form>
+          <% } %>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

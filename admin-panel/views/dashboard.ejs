@@ -1,0 +1,24 @@
+<h1>Dashboard</h1>
+<div class="stats-grid">
+  <div class="stat-card"><div class="value"><%= stats.totalUsers %></div><div class="label">Total Users</div></div>
+  <div class="stat-card"><div class="value"><%= stats.onlineUsers %></div><div class="label">Online Now</div></div>
+  <div class="stat-card"><div class="value"><%= stats.totalChats %></div><div class="label">1:1 Chats</div></div>
+  <div class="stat-card"><div class="value"><%= stats.totalGroups %></div><div class="label">Groups</div></div>
+  <div class="stat-card"><div class="value"><%= stats.totalMessages %></div><div class="label">Messages Sent</div></div>
+  <div class="stat-card"><div class="value"><%= stats.activeStatuses %></div><div class="label">Active Stories</div></div>
+</div>
+
+<h1>Recently Joined</h1>
+<table>
+  <thead><tr><th>Name</th><th>Phone</th><th>Joined</th><th>Status</th></tr></thead>
+  <tbody>
+    <% recentUsers.forEach(u => { %>
+      <tr>
+        <td><%= u.name || '—' %></td>
+        <td><%= u.phoneNumber %></td>
+        <td><%= new Date(u.createdAt).toLocaleDateString() %></td>
+        <td><span class="badge <%= u.isOnline ? 'online' : 'offline' %>"><%= u.isOnline ? 'Online' : 'Offline' %></span></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

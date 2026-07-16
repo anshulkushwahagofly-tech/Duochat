@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DuoChat Admin — <%= typeof title !== 'undefined' ? title : 'Dashboard' %></title>
+  <link rel="stylesheet" href="/css/admin.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo-mark">⚡💬</div>
+        <span>DuoChat<span class="accent">Admin</span></span>
+      </div>
+      <nav>
+        <a href="/">Dashboard</a>
+        <a href="/users">Users</a>
+        <a href="/groups">Groups</a>
+        <a href="/messages">Messages</a>
+        <a href="/broadcast">Broadcast</a>
+      </nav>
+      <form method="POST" action="/logout" class="logout-form">
+        <button type="submit">Log out</button>
+      </form>
+    </aside>
+    <main class="content">
+      <%- body %>
+    </main>
+  </div>
+</body>
+</html>

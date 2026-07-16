@@ -1,0 +1,13 @@
+<h1>Groups</h1>
+<table>
+  <thead><tr><th>Group Name</th><th>Members</th><th>Created</th></tr></thead>
+  <tbody>
+    <% groups.forEach(g => { %>
+      <tr>
+        <td><%= g.groupName %></td>
+        <td><%= g.participants.length %></td>
+        <td><%= new Date(g.createdAt).toLocaleDateString() %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

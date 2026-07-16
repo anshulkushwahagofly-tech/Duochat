@@ -1,0 +1,14 @@
+<h1>Recent Messages</h1>
+<table>
+  <thead><tr><th>Sender</th><th>Type</th><th>Content</th><th>Sent</th></tr></thead>
+  <tbody>
+    <% messages.forEach(m => { %>
+      <tr>
+        <td><%= m.sender ? (m.sender.name || m.sender.phoneNumber) : 'Unknown' %></td>
+        <td><%= m.type %></td>
+        <td><%= m.isDeleted ? '(deleted)' : (m.text || '[media]') %></td>
+        <td><%= new Date(m.createdAt).toLocaleString() %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
