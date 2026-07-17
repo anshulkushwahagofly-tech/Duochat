@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "87249958740",
+    "project_id": "duochat-6b3d6",
+    "storage_bucket": "duochat-6b3d6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:87249958740:android:7cc1ac58b166bd957e7ac1",
+        "android_client_info": {
+          "package_name": "com.example.duochat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuBTKuxh0Z4qq1s6oIhHZvwUDNqLQEMPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
